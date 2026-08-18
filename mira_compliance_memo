@@ -1,0 +1,21 @@
+To: Data Protection Officer / Legal Counsel, MIRA
+From: Elza Paegle, AI Compliance Consultant
+Date: 18 August 2026
+Subject: First-pass GDPR assessment of the MIRA MVP
+
+Bottom line — proceed with conditions. MIRA may continue as a controlled prototype, but it should not be opened to real public users until its cloud/AI supply chain, sensitive-data controls, retention, and rights workflows are documented and technically enforced.
+
+MIRA processes more than questionnaire data. Uploaded photographs, free text, contact details, Creative DNA and personality/style inferences, generated images, and workflow logs are personal data when linked to an identifiable user. Images or text may also reveal Article 9 characteristics or information about third parties, although MIRA does not need these data. The service scores users and uses innovative generative AI; those two DPIA criteria are enough to justify completing a DPIA before deployment. Article 22 is unlikely to apply because MIRA makes creative recommendations without legal or similarly significant effects and the user or photographer may reject every output.
+
+The top three actions are:
+
+Minimise and define the processing. Publish a layered privacy notice; make name/email optional where possible; prohibit third-party and special-category submissions; strip EXIF metadata; define an adults-only scope; and adopt automated limits of seven days for raw images and 30 days for other prototype inputs and outputs.
+
+Contract and map every vendor before data flows. Execute Article 28 DPAs with Tally, n8n, Google, Railway, the LLM provider, and the image provider; record subprocessors and processing regions; disable provider training and secondary use; and document an EU–US Data Privacy Framework or SCC-based transfer mechanism, with a transfer assessment where required.
+
+Complete the DPIA and implement controls. Build one user/submission identifier across systems, cascading erasure, access/export and correction workflows, role-based access, incident response, short log retention, consent records for optional research/cookies, and clear AI/synthetic-image disclosures.
+
+Residual risks remain even after these measures: AI profiles may be inaccurate or reductive; users may upload images containing people who did not agree to processing; and vendor subprocessors, remote access, or model behaviour may change. Human review, recurring vendor checks, and output correction must therefore remain part of operations.
+
+This memo is a preliminary compliance assessment—not a legal opinion, DPIA, certification, or guarantee of compliance. MIRA must engage qualified legal counsel before relying on it for deployment decisions.
+

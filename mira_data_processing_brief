@@ -1,0 +1,107 @@
+MIRA Data Processing Brief
+
+Prepared for: Data Protection Officer / legal counsel
+System: MIRA Project 3 MVP
+Assessment date: 18 August 2026
+
+1. Does MIRA process personal data?
+
+Yes. MIRA processes information relating to an identifiable user and may also process information about other identifiable people shown in uploaded reference images. Questionnaire answers, free text, uploaded photographs, the user’s name or contact details, technical identifiers, and AI-derived Creative DNA or personality/brand attributes are personal data. Pseudonymous IDs remain personal data while MIRA or a vendor can reconnect them to the user.
+
+The generated profile, shoot plan, moodboard, and images are also personal data when they relate to or portray an identifiable user. The MVP does not use anonymised data only.
+
+2. Personal data processed and source
+
+Category
+
+Specific examples
+
+Source
+
+Identity and contact data
+
+Name; email if collected to identify the submission or deliver results
+
+Submitted directly by the user through Tally or the MIRA application
+
+Questionnaire and behavioural-preference data
+
+Answers about confidence, camera ease, warmth, openness, style, colour, setting, energy, and brand preferences
+
+Submitted directly by the user
+
+Free-text content
+
+Brand goals, self-description, intended audience, creative brief, feedback, and prompt-like instructions
+
+Submitted directly by the user
+
+Visual data
+
+Self-portraits, reference photographs, inspiration images, image URLs, and potentially embedded metadata such as EXIF
+
+Uploaded or linked by the user; images may contain third parties
+
+Inferred attributes
+
+Trait scores and labels; Creative DNA; predicted aesthetic, personality, confidence, visual identity, or brand direction
+
+Derived by MIRA’s scoring logic and AI providers from user inputs
+
+Generated outputs
+
+Moodboard, shoot plan, styling/lighting/location/posing recommendations, summary document, and up to five generated images
+
+Produced by MIRA, the LLM, and image-generation service
+
+Technical and usage data
+
+Submission ID, timestamps, workflow execution logs, IP/device/browser data, cookies, error logs, and service metadata
+
+Collected automatically by the frontend and vendors
+
+Support and consent records
+
+Support messages, privacy choices, consent/withdrawal record, deletion requests
+
+Submitted by the user or created by MIRA as an accountability record
+
+MIRA does not need special-category data. However, a photograph or free-text answer could reveal or enable an inference about health, disability, racial or ethnic origin, religion, political opinions, trade-union membership, or sexual orientation. MIRA should neither ask for nor deliberately infer these characteristics.
+
+3. Processing purposes
+
+Each purpose is separate:
+
+Receive and validate the user’s questionnaire, text, and visual references.
+
+Calculate limited preference/trait scores and generate the requested Creative DNA and visual direction.
+
+Generate the requested moodboard, shoot plan, summary, and images.
+
+Deliver and temporarily store the result so the user can view or download it.
+
+Maintain service security, diagnose failures, and prevent abuse using minimal logs.
+
+Provide support and fulfil access, correction, deletion, restriction, objection, portability, or consent-withdrawal requests.
+
+Improve MIRA only where users have separately and freely opted in to research/testing; production inputs must not be reused for model training, marketing, portfolios, or unrelated analytics by default.
+
+4. Processing chain and recipients
+
+The intended flow is:
+
+User → Tally form / MIRA frontend → n8n Cloud workflow → Google Sheets/Docs → LLM API and image-generation API → Railway-hosted MIRA application → user
+
+The MIRA project team currently determines why and how prototype data is used and is therefore the controller for prototype testing. If a photographer or other client later deploys MIRA for its own customers, that client will normally be the controller and the MIRA service operator will normally act as processor for the requested generation service, subject to the contract and actual decision-making. Tally, n8n, Google, Railway, and the AI providers are expected to act as processors/subprocessors only if contracts prohibit independent reuse such as provider model training.
+
+GitHub is a source-code/documentation repository, not an approved personal-data store. Only synthetic or irreversibly redacted test data should appear there.
+
+5. Storage, processing locations, and transfers
+
+Personal data may be duplicated in Tally responses, n8n execution histories, Google Sheets/Docs, AI-provider logs, image-generation jobs, Railway application storage/logs, and the user-facing output. The exact hosting region and subprocessor chain for each vendor were not evidenced and are Unknown — verify before deployment.
+
+If a vendor processes data outside the EEA, MIRA must document the transfer. A US transfer may rely on the EU–US Data Privacy Framework only where the receiving legal entity is currently certified and the transfer is covered; otherwise, appropriate safeguards such as the European Commission’s Standard Contractual Clauses and a transfer assessment are required. EU region selection does not by itself resolve remote-access or onward-transfer questions.
+
+6. Decisions and human review
+
+MIRA scores inputs and recommends a creative direction, but it does not decide whether a person receives a job, loan, public service, education place, insurance product, or comparable opportunity. Its outputs have no intended legal or similarly significant effect. The user and photographer can inspect, reject, edit, or ignore every recommendation; this meaningful human choice must remain explicit in the interface and client workflow.
