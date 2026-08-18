@@ -1,0 +1,170 @@
+Test: Could MIRA demonstrate GDPR compliance to a regulator using documentation and controls that exist today?
+Answer: No. This lab creates a first-pass evidence base, but most operational proof is missing or unverified.
+
+Evidence or control
+
+Status after this lab
+
+What exists / what is missing
+
+Data-processing brief
+
+Exists
+
+mira_data_processing_brief.md documents categories, sources, purposes, vendors, locations, transfers, and decision effects
+
+Personal-data inventory
+
+Exists as draft
+
+Phase 1 records processing activities and proposed retention; implementation proof is missing
+
+Controller/processor role map
+
+Exists as draft
+
+Phase 2 maps likely roles; commercial client/operator allocation must be confirmed contractually
+
+Records of Processing Activities — Article 30
+
+Partial
+
+This audit supplies inputs, but not a complete ROPA with owners, systems, security measures, recipients, and approved retention
+
+Lawful-basis record
+
+Partial
+
+Bases and justifications are proposed; final purpose wording and legal approval are missing
+
+Legitimate Interests Assessment
+
+Draft exists
+
+Security/logging LIA is drafted; actual logs and safeguards must be checked before sign-off
+
+DPIA — Article 35
+
+Missing
+
+Screening indicates two criteria; a full DPIA, risk owners, mitigations, sign-off, and residual-risk decision are required
+
+Privacy notice — Articles 13/14
+
+Missing
+
+Must identify controller/DPO, purposes/bases, recipients, transfers, retention, rights, complaints, profiling, and optional processing
+
+Article 28 DPAs
+
+Unknown / not evidenced
+
+Obtain and archive executed DPAs for every processor/subprocessor relationship
+
+Vendor and subprocessor register
+
+Missing
+
+Record legal entity, service, data, region, subprocessors, security evidence, DPA, transfer mechanism, and review date
+
+International-transfer assessment
+
+Missing
+
+Verify EU–US DPF certification or SCCs, onward transfers, supplementary measures, and transfer impact assessments
+
+Provider no-training / no-secondary-use terms
+
+Unknown
+
+Contract and configuration evidence required for both LLM and image-generation providers
+
+Retention schedule
+
+Draft exists
+
+Seven-/30-day targets proposed; business/legal approval and system-by-system deletion rules are missing
+
+Automated deletion evidence
+
+Missing
+
+Configure deletion in Tally, n8n executions, Google files, AI/image providers, Railway, logs, and backups; retain test evidence
+
+Data-subject-rights procedure
+
+Missing
+
+Assign owner, identity-verification method, vendor search steps, one-month deadline tracking, response templates, and escalation
+
+Consent and withdrawal records
+
+Unknown
+
+Needed for optional research, portfolio reuse, and non-essential cookies; withdrawal must stop future use and trigger deletion where applicable
+
+Cookie/ePrivacy inventory
+
+Missing
+
+Scan the frontend and embeds; classify each technology and block non-essential technologies before consent
+
+Access-control matrix
+
+Unknown
+
+Document least-privilege roles for Tally, n8n, Google, Railway, support, and vendor dashboards; remove shared accounts
+
+Security assessment — Article 32
+
+Missing
+
+Document encryption, secret management, MFA, backups, logging, vulnerability handling, and regular testing
+
+Incident and personal-data-breach plan
+
+Missing
+
+Establish detection, containment, processor escalation, risk assessment, 72-hour authority notification, user communication, and evidence log
+
+Data Protection by Design review
+
+Exists as first pass
+
+mira_data_protection_by_design_checklist.md; all failures/unknowns require owners and deadlines
+
+AI transparency and synthetic-content labelling
+
+Missing / unverified
+
+Add visible AI notice, output caveat, correction mechanism, image labels, and applicable machine-readable marking
+
+Children/vulnerable-user policy
+
+Missing
+
+Apply an 18+ prototype rule and reassess before admitting children or dependent/vulnerable groups
+
+Training and confidentiality records
+
+Missing
+
+Anyone with access to submissions needs documented confidentiality and privacy/security training
+
+GitHub/test-data policy
+
+Partial
+
+README prohibits production data; add repository checks for secrets, personal data, screenshots, and sample outputs
+
+Documentation priority
+
+Before any public pilot: privacy notice, full DPIA, DPAs, vendor/transfer register, no-training terms, consent/cookie configuration, access controls, automated deletion, and rights workflow.
+
+Before processing the first real user: perform an end-to-end test using synthetic data, including access export, correction, withdrawal, deletion across all processors, backup expiry, and incident escalation.
+
+During operation: keep a ROPA, rights/request log, deletion evidence, breach register, vendor change log, DPIA review record, and periodic access review.
+
+Accountability conclusion
+
+The written analysis is now substantially stronger, but a regulator would ask for operational evidence rather than policy statements alone. MIRA is therefore documented enough for a controlled synthetic-data prototype, not ready for uncontrolled real-user deployment.
