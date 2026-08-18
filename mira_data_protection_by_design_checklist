@@ -1,0 +1,64 @@
+MIRA Data Protection by Design Checklist
+
+Highest-risk activity: combining questionnaire answers, free text, and user/reference images to infer a Creative DNA profile and generate personalised text and images through multiple cloud/AI providers.
+
+Design principle
+
+Current state of MIRA
+
+Pass / Fail / Unknown
+
+Required change
+
+Data minimisation: only the minimum necessary data is collected
+
+The prototype may collect name/email, rich free text, uploaded images, metadata, and vendor logs without an evidenced necessity review
+
+Fail
+
+Make identity/contact fields optional where possible; limit text length/file types; block third-party and sensitive content; strip EXIF; keep full content out of logs
+
+Purpose binding: data is technically restricted to the stated purpose
+
+Inputs pass through several vendors; no evidence confirms no-training, no portfolio/demo reuse, or technical separation of optional research
+
+Fail
+
+Contractually disable training/secondary use; separate service data from opt-in research; use synthetic examples; prevent production data entering GitHub or presentations
+
+Access controls: access is limited to those who need it
+
+Roles, shared accounts, MFA, Google permissions, vendor-dashboard access, and access-review records were not evidenced
+
+Unknown
+
+Implement named accounts, MFA, least-privilege roles, restricted folders/workflows, quarterly reviews, and immediate offboarding
+
+Retention enforcement: automated deletion or anonymisation is in place
+
+Seven-/30-day limits are proposed, but deletion across Tally, n8n, Google, AI/image providers, Railway, logs, and backups is not evidenced
+
+Fail
+
+Configure timed deletion and n8n execution pruning; document provider retention; test cascades and backup expiry; record exceptions
+
+Subject-rights workflow: access or erasure can be completed within one month
+
+Data is fragmented and no unified search/export/deletion workflow was evidenced
+
+Fail
+
+Create a user/submission ID, system inventory, request intake/verification, processor search steps, export format, deletion cascade, deadlines, and audit log
+
+Incident response: breach detection and 72-hour notification process is documented
+
+No incident owner, processor escalation path, risk-assessment method, notification template, or exercise was evidenced
+
+Fail
+
+Adopt and test an incident plan covering containment, evidence preservation, DPO/legal escalation, processor notice, supervisory-authority assessment, and affected-user communication
+
+Design decision
+
+MIRA should remain limited to synthetic or tightly controlled test data until all five failures are remediated and the access-control unknown is verified. Passing this checklist requires technical evidence—configuration screenshots, test logs, signed terms, and deletion/export results—not only written policy.
+
