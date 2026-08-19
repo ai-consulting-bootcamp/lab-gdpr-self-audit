@@ -1,23 +1,20 @@
-# Audit your own project — GDPR lens
+# GDPR Audit — AI Delivery Risk Assistant
 
-**Track:** Module 7 — GDPR · **When:** Week 7, Day 3 · **Status:** Required
+Self-audit for Project 3 (`delivery-risk-assistant`), completed for the "Audit your own project — GDPR lens" lab.
 
-This repository contains everything you need for this lab.
+**Audited system:** [`delivery-risk-assistant`](https://github.com/akansha27nov/delivery-risk-assistant) — an AI pipeline that ingests project artefacts (sprint reports, tickets, standup transcripts, Slack threads, emails) and uses an LLM to extract and route delivery risks for human review.
 
-## Files
+**Auditor:** Akansha Verma
+**Date:** 19 August 2026
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+## File map
 
-## How to complete this lab
+| File | Contents |
+|---|---|
+| `gdpr-audit-delivery-risk-assistant.md` | Full GDPR audit: data processing brief, personal data inventory (Phase 1), role map (Phase 2), lawful basis assessment with LIA (Phase 3), risk and rights analysis (Phase 4), elevated finding on the attrition-signal handling gap, law stacking check (Phase 5), compliance memo (Phase 6), accountability test, and data protection by design checklist. |
 
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
+## Note on scope
 
-## Submission hygiene
+This repository contains only the GDPR audit deliverable for this lab. The audited system's source code lives in its own separate repository, linked above, and is not duplicated here.
 
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+**This audit is a first-pass compliance assessment for a consulting portfolio exercise — not a legal opinion, DPIA, or certification.**
