@@ -74,6 +74,8 @@ For any international transfer, note which transfer mechanism applies: adequacy 
 - If data leaves the EEA and there is no adequacy decision, the likely mechanism would be **Standard Contractual Clauses (SCCs)** plus a transfer-risk assessment.
 - Health or injury data should be treated as especially sensitive. Ideally, it should be minimised, pseudonymised, or removed before being sent to any LLM or external reporting tool.
 
+---
+
 ## Phase 3: Lawful basis assessment
 
 For each processing purpose, select a lawful basis and justify it.
@@ -115,6 +117,8 @@ Does the privacy impact outweigh the benefit?
 
 **Legal review flag:** - **TBD — legal review required**, especially for health data, automated classification/scoring, cross-border transfers, retention periods, and any future model training or predictive analytics.
 
+---
+
 ## Phase 4: Risk and rights analysis
 
 ### Special category data, Article 9
@@ -138,3 +142,38 @@ Because at least two criteria are likely or possible, especially evaluation/scor
 ### Data subject rights friction
 
 The main rights friction points are the **right of access**, the **right to erasure**, the **right to rectification**, and the **right to object to profiling or risk classification**. A passenger may ask what personal data was processed, what the AI produced about the incident, what prompts or logs were created, and who received the weekly report. The current MVP has useful audit logs, but production use would need a clear subject-rights workflow so the client can find all relevant data across the database, LLM logs, reports, and any exported records within the GDPR response deadline.
+
+---
+
+## Phase 5: Law stacking check
+
+### AI Act cross-check
+
+The system is treated as a **limited-risk / transparency decision-support system.**
+
+### ePrivacy check
+
+The system does not use cookies, tracking pixels, device-level data collection, or electronic-communications monitoring, so ePrivacy is likely **not a major issue for the current version**. 
+
+### Data Act check
+
+The Data Act is likely **not applicable to the current MVP**, because the system does not involve connected product data, IoT device data, smart-ship sensor data, or cloud-switching services.
+
+---
+
+## Phase 6: Compliance memo
+
+### Draft memo
+
+**To:** Data Protection Officer / Legal Counsel
+**Subject:** First-pass GDPR compliance assessment for Proactive Incident Agent
+
+**Bottom line:** Proceed with conditions. The Proactive Incident Agent can be developed as a human-reviewed decision-support tool, but it should not be used with real passenger or medical data until GDPR controls, vendor checks, and a DPIA are completed.
+
+The system processes cruise incident reports and optional doctor reports to extract structured case information, identify missing fields, classify severity, claim risk and customer impact, flag higher-risk cases, and support weekly risk reporting. This creates GDPR exposure because the system may process passenger identity data, staff or witness information, incident narratives, inferred risk classifications, audit logs, and health-related information from injury descriptions or doctor reports. Health data is special-category data under GDPR Article 9, so the client must identify both a lawful Article 6 basis and a separate Article 9 condition before production use.
+
+The top three actions are: **(1)** complete a DPIA before deployment, because the system likely involves evaluation/scoring, health data, innovative AI-assisted processing, and possible dataset combination; **(2)** confirm all vendor arrangements before any real personal data flows, including DPAs, hosting regions, sub-processors, transfer mechanisms, retention settings, security controls, and whether data is used for model training; and **(3)** implement privacy-by-design controls, including data minimisation, pseudonymisation or anonymisation before LLM use, strict access controls, clear retention rules, audit logs, and mandatory human review before any claim, legal, escalation, or compensation action.
+
+Residual risks remain even if these actions are completed. First, AI classifications may still be inaccurate or unfairly influence human reviewers. Second, medical and incident data may be difficult to fully remove from logs, reports, backups, or exported records. Third, cross-border vendor processing may create continuing transfer and security risks.
+
+This memo is a first-pass compliance assessment for bootcamp learning purposes. It is not a legal opinion, DPIA, conformity assessment, certification, or final regulatory determination. The client should engage qualified legal counsel before relying on this assessment for production compliance decisions.
