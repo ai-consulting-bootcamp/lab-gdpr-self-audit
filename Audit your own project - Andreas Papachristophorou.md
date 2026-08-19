@@ -114,3 +114,27 @@ Does the privacy impact outweigh the benefit?
 **Answer:** The individual's interests could override the business interest if the system uses real medical data without strong safeguards, sends identifiable health information to external vendors, produces risk scores that strongly influence claim outcomes, or uses incident data later for AI training without clear notice. The balance is stronger if the system remains human-reviewed, uses pseudonymisation or anonymisation where possible, limits access, keeps logs, has clear retention rules, and does not make automated final decisions. Because passengers may be affected by claim triage or escalation, this balancing test should be reviewed by legal counsel before production use.
 
 **Legal review flag:** - **TBD — legal review required**, especially for health data, automated classification/scoring, cross-border transfers, retention periods, and any future model training or predictive analytics.
+
+## Phase 4: Risk and rights analysis
+
+### Special category data, Article 9
+
+Yes. Injury details, doctor-report content, medical observations, treatment notes, and severity descriptions may reveal health data, which is special-category data under GDPR Article 9. The exact Article 9 condition is **TBD — legal review**, but possible candidates may include processing needed for legal claims or another condition confirmed by counsel. Before production use, the client should identify the correct Article 9 condition, minimise health data sent to external vendors, and avoid sending full identifiable doctor reports to an LLM unless this is legally approved and technically protected.
+
+### Automated decision-making, Article 22
+
+The system will not make automated decisions with legal or similarly significant effects by itself. It classifies severity, claim risk, and customer impact, and it can flag high-risk or incomplete cases, but it does not automatically approve, reject, settle, or deny a claim. A human claims officer or reviewer must check the extracted fields, missing-information list, classification, risk flag, explanation, and suggested follow-up questions before any real action is taken. The human reviews  remain on the loop and has oversight. 
+
+To reduce this risk, the system should include safeguards: mandatory human review before action, clear explanations of classifications, audit logs, the ability for a person to challenge or correct an output, and documented instructions that the AI is decision support only.
+
+### DPIA trigger
+
+Several DPIA trigger criteria may apply to a production version of this system. The strongest trigger is **evaluation or scoring of people**, because the system classifies severity, claim risk, customer impact, completeness status, and high-risk flags linked to passenger incidents. **Special category data** may also apply because doctor reports and injury descriptions can contain health data. **Innovative technology** apply because the system uses an LLM-based workflow to assist claims triage and risk review.
+
+Other criteria are possible but need legal and technical review. **Large-scale processing** will apply when the system is used across many vessels, passengers, incidents, or claims over time. **Matching or combining datasets** could apply if incident reports are combined with doctor reports, passenger records, witness statements, police reports, insurance data, or operational logs. **Automated decision-making with significant effects** does not appear to apply because human review remains required.
+
+Because at least two criteria are likely or possible, especially evaluation/scoring plus health data, a **DPIA should be treated as required before production deployment**. The DPIA should review data minimisation, human oversight, LLM/vendor processing, cross-border transfers, retention, access controls, audit logs, and whether outputs could unfairly affect passengers.
+
+### Data subject rights friction
+
+The main rights friction points are the **right of access**, the **right to erasure**, the **right to rectification**, and the **right to object to profiling or risk classification**. A passenger may ask what personal data was processed, what the AI produced about the incident, what prompts or logs were created, and who received the weekly report. The current MVP has useful audit logs, but production use would need a clear subject-rights workflow so the client can find all relevant data across the database, LLM logs, reports, and any exported records within the GDPR response deadline.
