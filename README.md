@@ -1,23 +1,27 @@
 # Audit your own project — GDPR lens
 
-**Track:** Module 7 — GDPR · **When:** Week 7, Day 3 · **Status:** Required
+**Track:** Module 7 — GDPR · **Project audited:** [Intellectus — Social Impact Intelligence](https://github.com/paolahsp/Social-Impact-Consulting-Intelligence)
 
-This repository contains everything you need for this lab.
+This submission applies a GDPR lens to the real Intellectus Week 5 project. It distinguishes the demonstrated public-data/demo MVP from the proposed production use of internal client documents and external AI services.
 
-## Files
+## Submission files
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+| File | Purpose |
+| --- | --- |
+| [`intellectus_data_processing_brief.md`](./intellectus_data_processing_brief.md) | One-page DPO briefing on data, sources, purposes, actors, locations and decisions |
+| [`intellectus_gdpr_self_audit.md`](./intellectus_gdpr_self_audit.md) | Phases 1–5, LIA, risk/rights analysis, accountability test and privacy-by-design checklist |
+| [`intellectus_compliance_memo.md`](./intellectus_compliance_memo.md) | 300–400 word client-facing recommendation memo (Phase 6) |
+| [`instructions.md`](./instructions.md) | Original lab instructions |
+| [`rubric.md`](./rubric.md) | Original grading rubric |
 
-## How to complete this lab
+## Recommendation
 
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
+**Proceed with conditions.** Controlled public-data testing may continue with minimisation and governance improvements. Private client documents must remain disabled until controller/processor terms, transfer controls, a full DPIA, retention, data-subject-rights procedures, security controls and auditable human review are implemented and tested.
 
-## Submission hygiene
+## Evidence boundary
 
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+- Current evidence: consultant intake, n8n orchestration, bounded public research, local retrieval, structured draft and mandatory consultant review.
+- Not evidenced as current production processing: private document uploads, a hosted external AI provider, production storage, production identity/access controls or completed vendor governance.
+- `TBD — legal review` is used where the project does not establish enough facts to reach a responsible conclusion.
+
+No credentials, API keys, tokens or private client records are included in this lab submission.
