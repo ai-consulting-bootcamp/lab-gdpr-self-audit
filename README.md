@@ -1,23 +1,15 @@
-# Audit your own project — GDPR lens
+# MIRA — GDPR Self-Audit
 
-**Track:** Module 7 — GDPR · **When:** Week 7, Day 3 · **Status:** Required
+This repository contains Marija Kavaliauskaite's submission for the Ironhack Week 7 mandatory lab **“Audit your own project — GDPR lens.”** The system audited is MIRA, Marija's Project 3 private brand-recognition and creative-direction application.
 
-This repository contains everything you need for this lab.
+## File map
 
-## Files
+- [`mira-gdpr-self-audit.md`](mira-gdpr-self-audit.md) — evidence boundary, data processing brief, all six core phases, accountability review, legal-review evidence request, and privacy-by-design checklist.
+- [`instructions.md`](instructions.md) — official lab instructions.
+- [`rubric.md`](rubric.md) — official grading rubric.
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+## Bottom line
 
-## How to complete this lab
+**PROCEED WITH CONDITIONS.** The implemented owner-scoped architecture supports MIRA's creative purpose, but deployment should remain conditional on documented lawful bases, processor and transfer due diligence, retention and rights workflows, and a completed DPIA decision.
 
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
-
-## Submission hygiene
-
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+This is an educational first-pass assessment, not a legal opinion, DPIA, certification, or statement that MIRA is GDPR compliant. Unknown legal and operational facts are marked **TBD — legal review**.
