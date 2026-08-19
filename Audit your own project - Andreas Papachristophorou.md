@@ -74,3 +74,43 @@ For any international transfer, note which transfer mechanism applies: adequacy 
 - If data leaves the EEA and there is no adequacy decision, the likely mechanism would be **Standard Contractual Clauses (SCCs)** plus a transfer-risk assessment.
 - Health or injury data should be treated as especially sensitive. Ideally, it should be minimised, pseudonymised, or removed before being sent to any LLM or external reporting tool.
 
+## Phase 3: Lawful basis assessment
+
+For each processing purpose, select a lawful basis and justify it.
+
+| Purpose | Proposed lawful basis | One-line justification | Flag for legal review? |
+| --- | --- | --- | --- |
+| Ingest and structure incident investigation reports and optional doctor reports | Legitimate interests | The client has a legitimate business need to organise incident material for claims handling, safety review, legal risk management, and operational follow-up. | Yes — legal review recommended, especially where medical data is included |
+| Identify the correct case and connect reports to the right passenger or incident | Contract / legitimate interests | Processing may be necessary to manage passenger-service obligations and possible claims. | Yes — confirm with legal counsel |
+| Check whether required incident information is missing | Legitimate interests | The client needs complete and accurate case files before making claims, legal, risk. | Yes — confirm that the missing-field checks are proportionate and limited to necessary data |
+| Generate follow-up questions for vessel staff, investigation officers, claims teams, or other reviewers | Legitimate interests | Follow-up questions help the client collect missing information while evidence is still available and support fair human review. | Yes — especially if questions include or reveal health data |
+| Classify severity, claim risk, and customer impact for complete cases | Legitimate interests | The client has a legitimate interest in prioritising incidents, but classifications may influence people and therefore need human review and safeguards. | Yes — legal review recommended because this involves evaluation/scoring |
+| Flag high-risk or incomplete cases for human attention | Legitimate interests | Flagging helps the client escalate potentially serious matters to claims, legal, risk, or compliance teams. | Yes — confirm this does not become automated decision-making without meaningful human review |
+| Store structured case records, classifications, explanations, and audit logs | Legitimate interests / legal obligation | Storage supports accountability, auditability, claims handling, legal defence, and regulatory or litigation record-keeping. | Yes — retention period and legal basis should be confirmed |
+| Generate weekly risk reports for management review | Legitimate interests | Aggregated or minimised reporting helps the client monitor operational risk and recurring incident patterns. | Yes — reports should be minimised or pseudonymised where possible |
+| Process injury or medical information from doctor reports | TBD — legal review; likely Article 6 legitimate interests plus a separate Article 9 condition | Health data is special-category data, so Article 6 alone is not enough; the client must identify an Article 9 condition before production use. | Yes — mandatory legal review |
+| Use incident data to train or improve an AI model or build a future predictive model | TBD — legal review | This may be a new purpose beyond the original incident/claims purpose and may require a compatibility assessment, updated transparency notice, minimisation, anonymisation, or a different lawful basis. | Yes — mandatory legal review |
+
+### Legitimate Interests Assessment, if applicable
+
+If using legitimate interests, complete the three-part test.
+
+#### 1. Is the interest legitimate?
+
+What is the concrete business need?
+
+**Answer:** The interest is likely legitimate because the cruise company has a real business and legal need to review passenger incidents, manage possible claims, identify incomplete evidence, escalate serious matters, and monitor operational risk. The system supports existing claims, legal, safety, and compliance work rather than creating an unrelated commercial purpose. However, using the data for model training or future predictive analytics may be a separate purpose and should be marked **TBD — legal review**.
+
+#### 2. Is the processing necessary?
+
+Is there a less intrusive way to achieve the same goal?
+
+**Answer:** The processing may be necessary if the system only uses the information needed to structure the case, check missing fields, classify risk for human review, and create audit records. A less intrusive approach would be to minimise the data before LLM processing, remove or mask names where possible, avoid sending full doctor reports to external tools, and use aggregated or anonymise data in weekly reports. The system should not process more medical or identity data than needed for the specific claims and risk-review purpose.
+
+#### 3. Does the individual's interest override?
+
+Does the privacy impact outweigh the benefit?
+
+**Answer:** The individual's interests could override the business interest if the system uses real medical data without strong safeguards, sends identifiable health information to external vendors, produces risk scores that strongly influence claim outcomes, or uses incident data later for AI training without clear notice. The balance is stronger if the system remains human-reviewed, uses pseudonymisation or anonymisation where possible, limits access, keeps logs, has clear retention rules, and does not make automated final decisions. Because passengers may be affected by claim triage or escalation, this balancing test should be reviewed by legal counsel before production use.
+
+**Legal review flag:** - **TBD — legal review required**, especially for health data, automated classification/scoring, cross-border transfers, retention periods, and any future model training or predictive analytics.
