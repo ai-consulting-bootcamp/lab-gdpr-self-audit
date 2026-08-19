@@ -34,11 +34,13 @@ Roles depend on the operating stage. For the current demo, the project team dete
 | --- | --- | --- | --- |
 | Social-impact client | Controller in production | Defines diagnostic purpose, data subjects, inputs and permitted outputs | N/A as controller; must execute processor DPA with Intellectus |
 | Intellectus operator / Paola's delivery team | Controller for current self-directed demo; expected processor for client data | Intake, orchestration, research, report generation and consultant review | No production Article 28 DPA evidenced |
-| Individual consultant | Authorised user under client/operator governance; separate role only if independently determining purposes | Submits intake and performs mandatory review | Access/confidentiality terms not evidenced |
+| Individual consultant | Not a separate controller or processor; authorised person acting under the client controller or Intellectus processor, depending on the engagement | Submits intake and performs mandatory human review only within documented instructions | N/A for a separate DPA; confidentiality, access authorisation and training are required |
 | n8n hosting provider or self-hosted environment | Processor/subprocessor if it handles production personal data | Workflow execution, logs and payload handling | Hosting model and DPA unknown |
 | Web hosting, storage and logging vendors | Processor/subprocessor | Serves app; future case-file and log storage | Vendors, regions and DPAs unknown |
 | External AI/model provider | Prospective processor/subprocessor; not evidenced in current path | Future analysis of prompts/documents | Must remain disabled until vendor, DPA, settings and region are approved |
 | Public website publishers/search service | Normally independent controllers, not Intellectus processors | Publish/index and return public-source material | DPA generally not the mechanism; terms and collection method require review |
+
+**Role-map conclusion:** the project team is controller for the current self-directed demo; the client becomes controller for its production diagnostic, Intellectus acts as processor, and the individual consultant remains an authorised person within one of those organisations rather than a separate GDPR entity.
 
 ### International transfers
 
