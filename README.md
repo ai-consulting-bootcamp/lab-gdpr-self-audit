@@ -1,23 +1,11 @@
-# Audit your own project — GDPR lens
+# GDPR Audit — School Book Order Bot (Project 3)
 
-**Track:** Module 7 — GDPR · **When:** Week 7, Day 3 · **Status:** Required
+## File map
 
-This repository contains everything you need for this lab.
+- `01-data-processing-brief.md` — Kick-off brief: what personal data the system processes, where it comes from, what it's used for, who processes it, where it's stored, and whether it drives automated decisions.
+- `02-audit-worksheet.md` — Phases 1–5: personal data inventory, role map (controller/processor), lawful basis assessment with LIAs, risk and rights analysis, and law-stacking check (AI Act / ePrivacy / Data Act).
+- `03-compliance-memo.md` — Phase 6: client-facing advisory memo with bottom-line recommendation, top three actions, and residual risks.
 
-## Files
+## Note on assumptions
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
-
-## How to complete this lab
-
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
-
-## Submission hygiene
-
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+Several fields (retention periods, photo-storage behavior, exact processing regions for OpenAI/Google) are marked as **assumed** or **TBD — verify** throughout the worksheet, since they depend on implementation details or vendor confirmations not yet checked against the live workflow. These are flagged inline rather than presented as settled facts, per the lab's guidance that uncertain lawful-basis or factual claims should be marked for follow-up rather than guessed.
