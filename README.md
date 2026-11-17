@@ -8,6 +8,7 @@ This repository contains everything you need for this lab.
 
 - [`instructions.md`](./instructions.md) — the lab instructions
 - [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+- [`gdpr-self-audit-ai-search-visibility-agent-barsha.md`](./gdpr-self-audit-ai-search-visibility-agent-barsha.md) — GDPR self-audit of my Project 3 (AI Search Visibility Agent): data processing brief, data inventory, role map, lawful bases with LIA, risk and rights, law stacking, compliance memo, accountability check
 
 ## How to complete this lab
 
