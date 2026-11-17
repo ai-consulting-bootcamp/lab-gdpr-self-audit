@@ -1,23 +1,20 @@
-# Audit your own project — GDPR lens
+# GDPR Audit Lab — Audit your own project
 
-**Track:** Module 7 — GDPR · **When:** Week 7, Day 3 · **Status:** Required
+Ironhack AI Consulting & Integration bootcamp · Pieter Albrecht
 
-This repository contains everything you need for this lab.
+A first-pass GDPR assessment of my own Project 3, the **Vendor Due-Diligence Agent**: a LangGraph agent that screens a company against registers, sanctions data and news, and writes a risk report.
 
-## Files
+**Start here:** [lab_proof.md](lab_proof.md)
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+## File map
 
-## How to complete this lab
-
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
-
-## Submission hygiene
-
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+| File | Contents |
+|---|---|
+| [lab_proof.md](lab_proof.md) | Entry point: workflow, one run (input → evidence → output), limitations, links |
+| [data_processing_brief.md](data_processing_brief.md) | Kick-off: one-page data processing brief for a DPO |
+| [GDPR_Audit_Vendor_DD_Agent_Pieter_Albrecht.md](GDPR_Audit_Vendor_DD_Agent_Pieter_Albrecht.md) | CFU 1 Recognize, Phases 1–5 (inventory, role map, lawful basis + LIA, risk & rights, law stacking), CFU 4 accountability test |
+| [compliance_memo_Vendor_DD_Agent.md](compliance_memo_Vendor_DD_Agent.md) | Phase 6: compliance memo to the client's DPO |
+| [reinforce_accountability_and_legal_review_prep.md](reinforce_accountability_and_legal_review_prep.md) | Reinforce: documentation inventory, prep for the Art. 10 legal review |
+| [stretch_privacy_by_design_checklist.md](stretch_privacy_by_design_checklist.md) | Stretch: data protection by design checklist |
+| instructions.md | Lab instructions provided by Ironhack (template file) |
+| rubric.md | Grading rubric provided by Ironhack (template file) |
