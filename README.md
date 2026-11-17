@@ -8,16 +8,8 @@ This repository contains everything you need for this lab.
 
 - [`instructions.md`](./instructions.md) — the lab instructions
 - [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+- [`01_project3_system_brief.md`](./01_project3_system_brief.md) — system and data-processing brief
+- [`Mobile Game Competitor Snapshot mk.III.json`](./Mobile%20Game%20Competitor%20Snapshot%20mk.III.json) — n8n workflow export reviewed in the audit
+- [`Live flow screenshot on 2026-11-13 at 11.01.54.jpg`](./Live%20flow%20screenshot%20on%202026-11-13%20at%2011.01.54.jpg) — workflow evidence screenshot
+- [`02_gdpr_first_pass_audit.md`](./02_gdpr_first_pass_audit.md) — completed GDPR audit and client memo
 
-## How to complete this lab
-
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
-
-## Submission hygiene
-
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
