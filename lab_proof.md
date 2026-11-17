@@ -1,7 +1,7 @@
 # Lab Proof: GDPR Audit of Your Own Project (Fix My Process, Project 3)
 
 **Author:** Ayhan Demir · Ironhack AI Consulting & Integration Bootcamp · 17 Nov 2026
-**System audited:** Fix My Process, my Project 3 ([repo](https://github.com/ayhandemir7-LSSBB/project3-research-and-report) · [live app](https://fix-my-process.onrender.com))
+**System audited:** Fix My Process, my Project 3 
 **Result in one line:** **proceed with conditions.** Legitimate interests covers all 9 purposes, a DPIA is required, and no real employee data should enter the system until DPAs, transfer safeguards and input filtering are in place.
 
 ## Start here
