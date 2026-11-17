@@ -1,23 +1,27 @@
-# Audit your own project — GDPR lens
+# Model Intake Brief: GDPR self-audit lab
 
-**Track:** Module 7 — GDPR · **When:** Week 7, Day 3 · **Status:** Required
+Start with **[lab_proof.md](lab_proof.md)**. It links the completed assessment, reproducible run evidence and rubric coverage.
 
-This repository contains everything you need for this lab.
+This lab audits [Model Intake Brief](https://github.com/s-rostovskyi/model-intake-brief) at commit `e384f3a41b5c74119786f55865ebe4e7e6cfb73c`, checked on 17 November 2026. The owner confirms local individual educational use with public model documentation only. The assessment distinguishes code evidence, owner statements, unresolved legal/operational facts and proposed changes.
 
-## Files
+## File map
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+| File | Purpose |
+|---|---|
+| [lab_proof.md](lab_proof.md) | Reviewer entry point, workflow, runs, limitation and rubric map |
+| [model-intake-data-processing-brief.md](model-intake-data-processing-brief.md) | Compact data-processing handover |
+| [model-intake-gdpr-assessment.md](model-intake-gdpr-assessment.md) | Phases 1–5, findings and release gates |
+| [model-intake-compliance-memo.md](model-intake-compliance-memo.md) | Phase 6 client advisory memo |
+| [model-intake-accountability-and-design.md](model-intake-accountability-and-design.md) | Reinforce and stretch |
+| [model-intake-evidence-and-sources.md](model-intake-evidence-and-sources.md) | Source commit, evidence and legal references |
+| [evidence/](evidence/) | Synthetic payload, offline output, results and reproduction script |
+| [instructions.md](instructions.md) | Original lab instructions |
+| [rubric.md](rubric.md) | Original grading rubric |
 
-## How to complete this lab
+**Recommendation:** proceed with conditions for the local prototype; use offline fixtures or screened non-personal inputs while closing the identified gaps. This is a first-pass assessment, not a legal opinion, DPIA or certification. No application code changes are part of this lab.
 
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
+## Submission workflow
 
-## Submission hygiene
+The lab expects a GitHub repository submission and a pull request for automated rubric feedback. Review these local deliverables first. Commit, push and PR creation are pending the owner's explicit confirmation; the current work does not submit the lab automatically.
 
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+Keep the repository limited to this lab. Do not add API secrets, `.env` files, private client data, full source-project copies or course export dumps. Evidence supplied here uses public model identifiers and synthetic contact details only.

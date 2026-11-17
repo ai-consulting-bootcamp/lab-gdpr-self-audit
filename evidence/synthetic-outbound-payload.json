@@ -1,0 +1,93 @@
+{
+  "endpoint": "https://api.openai.com/v1/responses",
+  "body": {
+    "model": "gpt-5.4-mini",
+    "input": "{\"task\": \"Assess public evidence for the fixed checklist.\", \"rules\": [\"Use only the provided provider evidence.\", \"Use any mapped regulatory passages to interpret the corresponding checklist criterion. The fixed checklist controls the scope. Assess the criterion as written if passages are absent or irrelevant.\", \"Only source_catalog can support a finding or supply a source_id or quote. Regulatory passages explain the criteria and cannot establish evidence about the target model.\", \"Return one finding per checklist item in the same order.\", \"Use only the supplied source_id values.\", \"Keep each finding compact: item_id, proposed status, source_id when applicable, one short quote when supported, and a brief gap explanation when needed.\", \"Do not repeat URLs, checklist labels, regulatory references, searched-source lists, or report prose.\", \"If a quote is unsupported or attributed to a different variant, do not keep it as evidence found.\", \"If evidence is unresolved, leave source_id null and explain the gap briefly.\"], \"target\": {\"exact_model_id\": \"ExampleOrg/ExampleModel\"}, \"checklist\": [{\"item_id\": \"ID-01\", \"check\": \"Provider and model identity\"}, {\"item_id\": \"ID-02\", \"check\": \"Release date\"}, {\"item_id\": \"ID-03\", \"check\": \"Base model dependencies\"}, {\"item_id\": \"DS-01\", \"check\": \"Distribution and access\"}, {\"item_id\": \"DS-02\", \"check\": \"Licence or access terms\"}, {\"item_id\": \"TP-01\", \"check\": \"Architecture\"}, {\"item_id\": \"TP-02\", \"check\": \"Parameter size\"}, {\"item_id\": \"TP-03\", \"check\": \"Input and output modalities\"}, {\"item_id\": \"TP-04\", \"check\": \"Input and output limits\"}, {\"item_id\": \"US-01\", \"check\": \"Intended tasks and uses\"}, {\"item_id\": \"US-02\", \"check\": \"Restrictions on use\"}, {\"item_id\": \"US-03\", \"check\": \"Integration instructions\"}, {\"item_id\": \"DT-01\", \"check\": \"Training data types and provenance\"}, {\"item_id\": \"DT-02\", \"check\": \"Training data curation\"}, {\"item_id\": \"DT-03\", \"check\": \"Public training-content summary\"}, {\"item_id\": \"CT-01\", \"check\": \"Training duration — Context\"}, {\"item_id\": \"CT-02\", \"check\": \"Training compute — Context\"}, {\"item_id\": \"CT-03\", \"check\": \"Training energy — Context\"}], \"source_catalog\": [{\"source_id\": \"synthetic-source-1\", \"name\": \"Synthetic source\", \"usable\": true, \"http_status\": 200, \"snippet\": \"Example model documentation. Contact: Audit Example, audit.person@example.invalid.\", \"full_text\": \"Example model documentation. Contact: Audit Example, audit.person@example.invalid.\"}]}",
+    "store": false,
+    "max_output_tokens": 4000,
+    "text": {
+      "format": {
+        "type": "json_schema",
+        "name": "model_intake_assessment",
+        "strict": true,
+        "schema": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "findings": {
+              "type": "array",
+              "minItems": 18,
+              "maxItems": 18,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "item_id": {
+                    "type": "string",
+                    "enum": [
+                      "ID-01",
+                      "ID-02",
+                      "ID-03",
+                      "DS-01",
+                      "DS-02",
+                      "TP-01",
+                      "TP-02",
+                      "TP-03",
+                      "TP-04",
+                      "US-01",
+                      "US-02",
+                      "US-03",
+                      "DT-01",
+                      "DT-02",
+                      "DT-03",
+                      "CT-01",
+                      "CT-02",
+                      "CT-03"
+                    ]
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "Evidence found",
+                      "Partial",
+                      "Not found",
+                      "Not checked"
+                    ]
+                  },
+                  "source_id": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "quote": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "gap_explanation": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                },
+                "required": [
+                  "item_id",
+                  "status",
+                  "source_id",
+                  "quote",
+                  "gap_explanation"
+                ]
+              }
+            }
+          },
+          "required": [
+            "findings"
+          ]
+        }
+      }
+    }
+  }
+}

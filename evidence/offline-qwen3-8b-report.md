@@ -1,0 +1,209 @@
+# Model Intake Brief
+
+## Offline demo — fixture data
+
+- Exact model ID: `Qwen/Qwen3-8B`
+- Model provider: unknown
+- Hosting platform: offline
+- Target kind: hugging_face
+- Checklist version: v0.1
+- Run date: 2026-11-17
+- Notice: Information, not legal advice.
+
+### Summary
+- Headline: Offline demo — fixture data.
+- Evidence found: 0
+- Partial: 0
+- Not found: 0
+- Not checked: 18
+- Major gaps:
+  - No live source collection was run in offline mode.
+
+### Source collection
+- Offline fixture: HTTP n/a; usable data: yes
+  - Extracted text: Deterministic fixture for Qwen/Qwen3-8B.
+  - Metadata:
+    - id: FIXTURE-01
+    - label: Fixture finding
+    - status: Evidence found
+    - provider: Hugging Face
+    - target_kind: hugging_face
+
+### Findings
+- ID-01 - Provider and model identity: Not checked
+  - Reference: Form, General information
+  - Evidence sufficient: Official documentation identifies the provider and the exact model or version. A family name alone is partial.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- ID-02 - Release date: Not checked
+  - Reference: Annex XII §1(c), Form, General information
+  - Evidence sufficient: Provider identifies when the target model first became available. A repository modification date alone is insufficient.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- ID-03 - Base model dependencies: Not checked
+  - Reference: Form, General information
+  - Evidence sufficient: Exact upstream model or checkpoint is named, or the provider explicitly states that the model is not a modification or fine-tune of a prior model.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- DS-01 - Distribution and access: Not checked
+  - Reference: Annex XII §1(c), Form, Methods of distribution and licenses
+  - Evidence sufficient: Official repository, API documentation or equivalent identifies how the exact model is accessed and whether access is to weights or a hosted service.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- DS-02 - Licence or access terms: Not checked
+  - Reference: Annex XII §1(h), Form, Methods of distribution and licenses
+  - Evidence sufficient: Applicable licence text or service terms are linked from official documentation and can be tied to this distribution channel.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- TP-01 - Architecture: Not checked
+  - Reference: Annex XII §1(f), Form, Model properties
+  - Evidence sufficient: Architecture type is documented for the target model. A family description covering several architectures is partial without a mapping.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- TP-02 - Parameter size: Not checked
+  - Reference: Annex XII §1(f), Form, Model properties
+  - Evidence sufficient: Total parameter count or a clearly documented size range for the target model. Active parameter count alone is partial.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- TP-03 - Input and output modalities: Not checked
+  - Reference: Annex XII §1(g), Form, Model properties
+  - Evidence sufficient: Provider states supported input and output types for the target model.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- TP-04 - Input and output limits: Not checked
+  - Reference: Annex XII §2(b), Form, Model properties
+  - Evidence sufficient: Official documentation gives relevant limits and their units. A single shared context limit is partial if the output limit is unspecified.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- US-01 - Intended tasks and uses: Not checked
+  - Reference: Annex XII §1(a), Form, Intended uses
+  - Evidence sufficient: Provider describes representative uses or gives integration examples explicitly associated with the target model.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- US-02 - Restrictions on use: Not checked
+  - Reference: Annex XII §1(b), Form, Intended uses
+  - Evidence sufficient: Applicable restrictions or acceptable-use terms are linked and their relationship to this model or service is documented.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- US-03 - Integration instructions: Not checked
+  - Reference: Annex XII §2(a)
+  - Evidence sufficient: Official instructions identify a usable API call or local setup and its relevant prerequisites.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- DT-01 - Training data types and provenance: Not checked
+  - Reference: Annex XII §2(c), Form, Data
+  - Evidence sufficient: Provider identifies the data types and source categories for the model or a family explicitly documented as sharing them.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- DT-02 - Training data curation: Not checked
+  - Reference: Annex XII §2(c), Form, Data
+  - Evidence sufficient: Model-specific documentation explains selection, filtering or other relevant curation methods. Family-level evidence without explicit applicability is partial.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- DT-03 - Public training-content summary: Not checked
+  - Reference: Article 53(1)(d), separate AI Office template
+  - Evidence sufficient: A provider-published public summary explicitly covers the target model. A technical report may support other data checks and should be distinguished from a published summary.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- CT-01 - Training duration — Context: Not checked
+  - Reference: Annex XI §1(2)(d), Form, Computational resources
+  - Evidence sufficient: Provider gives a duration or documented duration range and identifies the training phase covered.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- CT-02 - Training compute — Context: Not checked
+  - Reference: Annex XI §1(2)(d), Form, Computational resources
+  - Evidence sufficient: Provider gives a model-specific compute amount or range with units and phase. Hardware type alone is partial.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+- CT-03 - Training energy — Context: Not checked
+  - Reference: Annex XI §1(2)(e), Form, Energy consumption
+  - Evidence sufficient: Provider gives a model-specific energy amount with units and scope. A documented reason why it cannot estimate energy is recorded separately as partial evidence.
+  - Source: Fixture finding
+  - Source section: Offline demo
+  - Model applicability: Offline demo only.
+  - Searched sources:
+    - Local test fixture
+  - Gap: Offline demo — fixture data only.
+
+### Prioritised provider questions
+- No unresolved provider questions were identified.
+
+### Context only
+- CT-01 · Training duration — Context · Not checked
+- CT-02 · Training compute — Context · Not checked
+- CT-03 · Training energy — Context · Not checked
+
+### Methods and limitations
+- Offline mode uses deterministic fixture data only.
+- No external network requests were made.
+
+### Regulatory context
+- No regulatory references were returned.
