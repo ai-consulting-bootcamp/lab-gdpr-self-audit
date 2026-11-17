@@ -1,23 +1,15 @@
-# Audit your own project — GDPR lens
+# LAB | Audit your own project: GDPR lens
 
-**Track:** Module 7 — GDPR · **When:** Week 7, Day 3 · **Status:** Required
+First-pass GDPR assessment of my Project 3, the **Application Prep Agent** (n8n). Project repo: [nmarseu/Project-3-Marseu](https://github.com/nmarseu/Project-3-Marseu).
 
-This repository contains everything you need for this lab.
+**Reviewer entry point: [`lab_proof.md`](lab_proof.md)**
 
-## Files
+## File map
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
-
-## How to complete this lab
-
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
-
-## Submission hygiene
-
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+| File | Contents |
+|---|---|
+| [`lab_proof.md`](lab_proof.md) | Entry point: workflow audited, input, evidence, output, limitation, sources |
+| [`01_data_processing_brief_application_prep_agent.md`](01_data_processing_brief_application_prep_agent.md) | Kick-off: data processing brief for a DPO |
+| [`02_gdpr_audit_worksheet_application_prep_agent.md`](02_gdpr_audit_worksheet_application_prep_agent.md) | CFU 1 and Phases 1–5: data inventory, role map, lawful basis + LIA, risk and rights, law stacking |
+| [`03_gdpr_compliance_memo_for_dpo.md`](03_gdpr_compliance_memo_for_dpo.md) | Phase 6: compliance memo to the client's DPO |
+| [`04_accountability_check_and_privacy_by_design.md`](04_accountability_check_and_privacy_by_design.md) | CFU 4 accountability test, Reinforce, Stretch (privacy-by-design checklist) |
