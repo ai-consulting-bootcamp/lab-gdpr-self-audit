@@ -1,0 +1,35 @@
+{
+  "audit_date": "2026-11-17",
+  "source_commit": "e384f3a41b5c74119786f55865ebe4e7e6cfb73c",
+  "python_version": "3.14.7",
+  "network_policy": "HTTP requests and socket connections blocked; assessment POST intercepted locally.",
+  "offline_run": {
+    "input": {
+      "live_mode": false,
+      "provider": null,
+      "model": "Qwen/Qwen3-8B"
+    },
+    "status_counts": {
+      "Not checked": 18
+    },
+    "error": null,
+    "output_file": "offline-qwen3-8b-report.md"
+  },
+  "invalid_input": {
+    "argv": [
+      "run",
+      "--model",
+      "not-a-valid-id"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "Use the ORG/MODEL format for a Hugging Face model, for example Qwen/Qwen3-8B. For a hosted model, also give the provider name.\n"
+  },
+  "synthetic_privacy_probe": {
+    "input_text": "Example model documentation. Contact: Audit Example, audit.person@example.invalid.",
+    "contact_preserved_in_outbound_prompt": true,
+    "store": false,
+    "actual_external_requests": 0,
+    "limitation": "Local payload inspection only; fake response is not an LLM assessment or a vendor retention test."
+  }
+}
