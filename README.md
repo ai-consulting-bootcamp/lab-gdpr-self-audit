@@ -21,3 +21,19 @@ This repository contains everything you need for this lab.
 - Keep this repository scoped to this lab only — no unrelated projects or personal files.
 - Use clear, descriptive filenames.
 - Remove secrets, API keys, and tokens before committing.
+
+## Lab submission — CompanyScope
+
+Start with [lab_proof.md](lab_proof.md).
+
+| Submission file | Contents |
+| --- | --- |
+| [lab_proof.md](lab_proof.md) | Evidence entry point, run command, output and limitation. |
+| [companyscope-data-processing-brief.md](companyscope-data-processing-brief.md) | One-page brief for a DPO new to CompanyScope. |
+| [companyscope-gdpr-audit.md](companyscope-gdpr-audit.md) | Phases 1–5 covering inventory, roles, transfers, bases, risks, rights and law stacking. |
+| [companyscope-dpo-memo.md](companyscope-dpo-memo.md) | Phase 6 client recommendation. |
+| [companyscope-accountability-and-sources.md](companyscope-accountability-and-sources.md) | Accountability test, counsel intake notes, design checklist and primary sources. |
+| [companyscope-workflow-evidence-excerpt.json](companyscope-workflow-evidence-excerpt.json) | Verbatim code and settings subset from the actual Project 3 workflow. |
+| [replay-companyscope-data-flow.cjs](replay-companyscope-data-flow.cjs) | Offline harness for the pinned node code. |
+| [synthetic-data-flow-input.json](synthetic-data-flow-input.json) | Fictional form, registry and web inputs. |
+| [companyscope-data-flow-run.json](companyscope-data-flow-run.json) | Captured data-flow replay evidence. |

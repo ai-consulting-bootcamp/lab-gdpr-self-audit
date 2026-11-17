@@ -1,0 +1,42 @@
+{
+  "form": {
+    "formMode": "production",
+    "company_name": "ExampleScope GmbH",
+    "register_identifier": "HRB 999999",
+    "ignored_note": "IGNORE-MARKER"
+  },
+  "registry_match": {"name": "ExampleScope GmbH", "company_id": "synthetic-001"},
+  "registry_details": {
+    "id": "synthetic-001",
+    "name": "ExampleScope GmbH",
+    "legal_form": "GmbH",
+    "register": {"register_court": "Musterstadt", "register_number": "999999", "register_type": "HRB"},
+    "address": {"street": "ExampleMarker Lane 7", "city": "Musterstadt"},
+    "purpose": {"purpose": "Precision machinery servicing"},
+    "status": "synthetic"
+  },
+  "search_response": {
+    "statusCode": 200,
+    "body": {
+      "results": [
+        {
+          "url": "https://examplescope.example/team",
+          "title": "ExampleScope machinery servicing",
+          "content": "Synthetic contact PersonMarker Example can be reached at role-marker@example.invalid for machinery servicing in Musterstadt."
+        },
+        {
+          "url": "https://unrelated.example/page",
+          "title": "An unrelated page",
+          "content": "UNRELATED-MARKER"
+        }
+      ]
+    }
+  },
+  "markers": {
+    "registry_address": "ExampleMarker Lane 7",
+    "web_name": "PersonMarker Example",
+    "web_email": "role-marker@example.invalid",
+    "unrelated_result": "UNRELATED-MARKER",
+    "extra_form_field": "IGNORE-MARKER"
+  }
+}

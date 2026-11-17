@@ -1,0 +1,47 @@
+{
+  "source_commit": "542665b0a4c6c5c18a8ac59896b87d5bd0eb39f6",
+  "external_requests_made": 0,
+  "scope": "Pinned code nodes and HTTP body expressions with synthetic upstream responses",
+  "exported_execution_settings": {
+    "executionOrder": "v1",
+    "saveDataSuccessExecution": "all",
+    "saveDataErrorExecution": "all"
+  },
+  "normalized_input_keys": [
+    "valid",
+    "entrypoint",
+    "company_name",
+    "register_identifier",
+    "requested_at"
+  ],
+  "tavily": {
+    "query": "\"ExampleScope GmbH\" Musterstadt {\"street\":\"ExampleMarker Lane 7\",\"city\":\"Musterstadt\"} Precision machinery servicing official website products services recent news developments",
+    "accepted_sources": 1,
+    "rejected_reasons": {
+      "brand_mismatch": 1
+    },
+    "markers_in_request": {
+      "registry_address": true,
+      "web_name": false,
+      "web_email": false,
+      "unrelated_result": false,
+      "extra_form_field": false
+    }
+  },
+  "openai": {
+    "endpoint": "/v1/responses",
+    "model": "gpt-4o-mini",
+    "store": false,
+    "sources": [
+      "REGISTRY-1",
+      "WEB-1"
+    ],
+    "markers_in_user_evidence": {
+      "registry_address": true,
+      "web_name": true,
+      "web_email": true,
+      "unrelated_result": false,
+      "extra_form_field": false
+    }
+  }
+}
