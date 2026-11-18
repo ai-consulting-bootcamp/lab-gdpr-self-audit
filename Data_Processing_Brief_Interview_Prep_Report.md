@@ -10,6 +10,8 @@
 
 The workflow collects the information that a candidate enters and the data generated while processing it. In some cases, this can include personal information about the candidate or their work history.
 
+**Personal-data determination:** Yes. A CV, GitHub profile/repository activity, and a report tied to those sources can identify or describe a candidate and their professional attributes. Job descriptions and company names are not necessarily personal data on their own, but may contain or become associated with identifiable people.
+
 | Data | Detail |
 |---|---|
 | **Company name** | Provided by the user as the target employer. |
@@ -29,7 +31,12 @@ From **job seekers directly** (company name, job description, CV upload, GitHub 
 
 ## 3. What is the data used for?
 
-(1) Building the interview-preparation report, including company background, relevant news, likely interview questions and skill gaps. (2) Comparing the job description against the candidate's CV and GitHub evidence. (3) Validating that the generated report includes the required sections and that claims are supported by evidence. (4) Allowing the user to review the result in the form. (5) Logging invalid submissions when the Notion branch is enabled. (6) Detecting and fixing workflow or validation issues. (7) Keeping a single user session active while the workflow runs.
+1. **Generate the requested report:** produce company background, news, role requirements, experience matches, project highlights, skill gaps and interview questions.
+2. **Compare candidate evidence with the role:** use submitted CV text and/or public GitHub repository information to identify relevant experience and projects.
+3. **Research the company:** send company/role queries to Tavily and GNews to retrieve background information and recent news.
+4. **Validate and format the output:** check required sections, news-item limits and support for candidate claims, then render the report as HTML for the form.
+5. **Validate submissions:** show an error for invalid inputs and, if enabled, attempt to log validation errors to Notion.
+6. **Operate and troubleshoot the workflow:** use n8n execution records and service request logs to diagnose failed or rate-limited steps. The README does not define a separate retention or analytics purpose.
 
 ## 4. Who processes it, and where?
 
@@ -50,6 +57,115 @@ The project is built with free or trial integrations, and the README does not do
 It does not make employment or hiring decisions. It helps the job seeker prepare for interviews by generating a report based on the company, the role and the candidate's own evidence. The system does not automatically approve, reject or rank the person; it mainly supports interview preparation.
 
 It does, however, produce generated outputs that can influence how the candidate prepares and what they emphasize in an interview. It also validates the report and removes unsupported candidate claims, which creates a quality-control layer but not a decision on suitability for employment. There is no human review before the report is displayed to the user. Invalid submissions are rejected by form validation, which is a process rule rather than an individual decision-making function.
+
+## Phase 1: Personal data inventory
+
+Retention periods and the user's location are not specified in the project documentation. “Potential EEA transfer” below means that a transfer may occur if the user is in the EEA and a receiving service processes the data outside it; the actual deployment and service regions must be confirmed.
+
+| Data category | Source | Purpose(s) | Retention period (known/estimated) | Crosses EU border? |
+|---|---|---|---|---|
+| CV text and professional history | Candidate-uploaded PDF | Generate report; compare experience and projects with the role; validate candidate claims | During workflow execution; n8n execution-history retention and any vendor retention are undocumented | Potentially; sent to OpenAI. User location, processing region and transfer terms must be confirmed |
+| GitHub username/profile and public repository metadata/README content | Candidate provides username/profile; GitHub REST API returns public data | Retrieve candidate evidence; compare projects and skills with the role; generate and validate report | API/workflow execution; local project documentation does not specify persistence or vendor log retention | Potentially; GitHub and OpenAI processing/transfer details for this use must be confirmed |
+| Job description and company name | Candidate submits them | Extract role requirements; company research; report generation and validation | During execution; n8n and provider retention are undocumented | Potentially; job/role query to Tavily and content to OpenAI. Confirm the exact fields sent and regions |
+| Company research and news results | Tavily and GNews | Add company background and recent relevant news to the report; validate source references | During execution; service retention and n8n execution-history settings are undocumented | Potentially; service regions and any EEA transfer mechanism are not documented |
+| Candidate-linked inferences and report (matches, gaps, highlighted projects, questions) | Generated from the job description, CV and/or GitHub evidence, company research and model output | Provide interview-preparation advice; validate claims; display report | Shown in the form; no dedicated report database is described, but execution-history retention is unknown | Potentially; OpenAI receives prompts/data and n8n region is deployment-dependent |
+| Invalid-input details and validation errors | Candidate form submission and workflow validation | Display validation message; optional Notion error logging; troubleshooting | Notion page and execution-log retention are not specified | Potentially; Notion location and n8n region/transfer terms must be confirmed |
+| IP address, request metadata and execution records | Browser, n8n hosting and external-service requests | Deliver the form and diagnose workflow/service failures | Not documented; hosting and provider defaults must be checked | Unknown; depends on hosting and each service's logging region |
+
+**Purpose-limitation check:** A candidate may submit a CV originally prepared for employers or recruiters and public GitHub material originally published for general portfolio or collaboration purposes. Reusing these materials to infer role fit and generate interview advice is a new processing context; compatibility, transparency and the applicable legal basis need confirmation. The original purpose and provenance of each CV/profile are not collected, so compatibility cannot be established from the current workflow documentation.
+
+## Phase 2: Role map
+
+This is a bootcamp MVP/prototype: the project README explains how to import and activate an n8n workflow, but does not establish that it was deployed for a client or used with real candidates. It documents candidate inputs and integration nodes, not the bootcamp's access to those inputs. The bootcamp, instructor and any hypothetical employer are therefore not treated as processing entities unless they actually receive or determine the use of personal data. If testing uses only synthetic data, the workflow does not process candidate personal data in those tests, though service operators may still handle technical metadata.
+
+The table distinguishes the project as documented from a possible future live deployment. Roles are functional and depend on who actually determines purposes and means, what data is sent, and the applicable service terms; labels in this draft are not legal determinations. “Not documented” means the bootcamp project files do not provide evidence of an agreement, not that no agreement exists.
+
+| Entity | Role (controller / processor / joint controller) | Processing activity | DPA in place? |
+|---|---|---|---|
+| Julia Antunes / project author | For independent testing with real candidate data, likely controller if she determines its purposes and means; if only developing under an organization's instructions, potentially processor. No real-candidate processing is established by the README; role is TBD — legal review if it occurs | Builds the workflow; may configure or operate it and access execution records during testing/deployment | No agreement documented in the project files |
+| Client / deploying organization | No separate client or live deploying organization is identified. If a future organization determines the purposes and means, it would likely be controller; assess its actual role before launch | No client processing activity is established for this bootcamp prototype | Not applicable to the documented prototype; assess before any client deployment |
+| n8n (Cloud or self-hosted) | If n8n Cloud handles personal data, likely processor for workflow hosting; for self-hosting, the organization operating the infrastructure has the corresponding operational responsibilities. Confirm contractual roles | Runs the form/workflow, processes inputs and may retain execution history | Not documented; confirm terms, DPA and subprocessors for the actual instance |
+| OpenAI API | Role depends on the API terms and whether it processes data only on instructions or for its own purposes; likely processor for instructed API processing, subject to verification | Receives report-generation input described by the workflow, including candidate evidence and research/job context | Not documented; verify applicable DPA, retention and data-use settings before real-data use |
+| Tavily | Receives company/role research query; controller/processor role depends on service terms and its own purposes | Retrieves company research; the README does not describe sending the CV or GitHub evidence to Tavily | Not documented; verify terms and DPA if it acts as processor |
+| GNews | Receives company/news query; controller/processor role depends on service terms and its own purposes | Retrieves recent news; the README does not describe sending the CV or GitHub evidence to GNews | Not documented; verify terms and DPA if it acts as processor |
+| GitHub REST API | Role depends on the API interaction and GitHub's applicable terms; likely separate controller for its platform operations | Receives public profile/repository requests and returns public repository metadata and README content | No DPA is documented; verify the applicable terms and role rather than assuming a processor relationship |
+| Notion (optional) | If enabled to store validation errors on behalf of the operator, potentially processor; confirm terms | The invalid-input branch attempts to create a page that may include submission/error details | Not documented; verify the destination, content, terms and DPA before sending personal data |
+
+The bootcamp/instructor is not listed as a processor because the project documentation does not show it receiving workflow submissions, CVs, reports or execution records. Reassess if coursework or demonstrations actually expose personal data to them.
+
+**International transfers:** No real-data deployment, user location, hosting region, vendor account configuration or transfer document is established by the bootcamp project files. Thus, an actual EEA transfer and its mechanism cannot be confirmed from this project. Before any live use involving EEA residents, identify each recipient and processing location and verify an applicable transfer mechanism (such as an adequacy decision or SCCs) and any required transfer assessment. Current status: **not established — legal review required before live personal-data processing**.
+
+## Phase 3: Lawful basis assessment
+
+No lawful basis is established by the project documents. The candidates below are issues for the controller and counsel to verify before production; a form submission alone does not establish valid consent.
+
+| Purpose | Proposed lawful basis | One-line justification | Flag for legal review? |
+|---|---|---|---|
+| Generate and display a report requested by the candidate | TBD — legal review; possible contract (Article 6(1)(b)) | The processing is requested to provide the report, but whether it is objectively necessary for a contract or pre-contractual steps depends on the service arrangement and controller identity | Yes |
+| Compare CV/GitHub evidence with the role and generate candidate-specific recommendations | TBD — legal review; possible contract (Article 6(1)(b)) | Evidence comparison is central to the requested personalized output, but necessity, candidate expectations and the original purpose of the data need assessment | Yes |
+| Query company research/news services | TBD — legal review; possible contract or legitimate interests | Research supports the requested report; the exact query fields, recipient roles and necessity should be verified | Yes |
+| Validate report structure and candidate claims | TBD — legal review; possible contract or legitimate interests | Validation may be necessary for a reliable requested output, but its scope and whether full CV/profile content is sent to the model need review | Yes |
+| Optional validation-error logging in Notion | TBD — legal review; possible legitimate interests | Troubleshooting invalid submissions may serve a concrete operational need, but logging personal data may not be necessary and the branch should be optional/minimized | Yes |
+| Keep n8n/service execution records for troubleshooting and security | TBD — legal review; possible legitimate interests | Maintaining service reliability and security may be legitimate, subject to necessity, minimization, access limits and a defined retention period | Yes |
+
+**Preliminary Legitimate Interests Assessment (LIA) — only if the controller proposes legitimate interests for optional error logging or operational logs:**
+
+1. **Purpose test:** Reliable workflow operation and diagnosing errors/security incidents are concrete operational interests; confirm the responsible controller and document the specific need.
+2. **Necessity test:** It is not established that full form contents or CV fragments are necessary. Prefer minimal technical error codes, redact input fragments, restrict access and disable Notion logging unless necessary.
+3. **Balancing test:** Candidates may not expect their CV or invalid submission to be copied into a third-party error page; retention, access, transparency, vulnerability and reasonable expectations must be assessed. On current evidence, the balance is unresolved.
+
+**Outcome: TBD — legal review.** Do not rely on legitimate interests for these activities until the controller completes and documents the LIA and provides required transparency and objection handling.
+
+## Phase 4: Risk and rights analysis
+
+**Special category data (Article 9):** The workflow does not ask for special-category data, but a CV, public README or pasted job text could include or reveal health, ethnicity, political or religious views, union membership, or other sensitive details. The system has no documented detection or exclusion control for such content, and no Article 9 condition is identified. Minimize submitted material and obtain legal review before processing special-category data; do not assume public availability removes Article 9 obligations.
+
+**Automated decision-making (Article 22):** The workflow generates candidate-specific matches and skill-gap suggestions without human review before displaying them, but the README describes interview preparation rather than hiring, ranking or an employment decision. On that stated use, it does not appear to make a solely automated decision with legal or similarly significant effects; this conclusion would need reassessment if employers use outputs to screen, rank or evaluate applicants. The report should be presented as advisory, with a way for candidates to challenge inaccuracies.
+
+**DPIA trigger:** At least two EDPB screening criteria appear relevant: evaluation/scoring of a person's professional fit (the report identifies matches and gaps), and matching/combining data from a CV or GitHub with a job description and external research. Innovative AI use and cross-border processing may also apply, but scale, user vulnerability and actual transfer routes are undocumented. A DPIA is generally indicated when two or more criteria apply; the controller should complete a DPIA screening and, given the apparent combination/evaluation, conduct a DPIA before production unless its DPO/legal counsel documents why one is not required.
+
+**Data subject rights friction:** Access is difficult to support because no procedure is documented for retrieving a candidate's form data, prompts, outputs, Notion records or vendor-held copies. Erasure and rectification may be difficult because execution-history, Notion and vendor retention/deletion controls are unspecified; no training use is described, but provider settings and terms must be confirmed. A request-handling owner, searchable reference, retention schedule and vendor deletion process are needed to meet applicable response deadlines; objection/withdrawal handling also depends on the lawful basis ultimately selected.
+
+## Phase 5: Law stacking check
+
+- **AI Act cross-check:** On the documented purpose (candidate self-preparation, not recruitment or selection), the system appears outside the employment high-risk use described in Annex III; this is a preliminary classification, not a legal determination. Confirm intended users and prevent employer screening use; assess applicable transparency, AI-literacy and provider/deployer obligations with counsel.
+- **ePrivacy check:** The README documents a web form but does not state whether cookies, pixels, analytics or device-level identifiers are used. Verify n8n/hosting configuration and provide any required consent before non-essential storage/access or tracking; no such consent is documented.
+- **Data Act check:** No connected-product/IoT data or cloud-switching use is described; **N/A on the documented project scope**.
+
+## Phase 6: Compliance memo
+
+**To:** Data Protection Officer / Legal Counsel
+
+**Subject:** Interview Prep Report — preliminary GDPR advisory
+
+**Bottom line: Proceed with conditions.** The current workflow can produce useful candidate-led interview preparation, but it processes identifiable CV and public-profile evidence, combines it with role data, and sends information through multiple services without documented lawful bases, retention controls, DPAs or transfer safeguards.
+
+The current MVP should be limited to controlled testing with synthetic or minimized inputs until these conditions are met; free or trial service status is not a substitute for documented safeguards.
+
+**Top three actions:** **(1)** Before any real candidate data is processed, identify the controller and deployment region; map each vendor's role, data fields, locations, retention and subprocessors; execute required DPAs and establish a valid transfer mechanism for any EEA-to-third-country flow. **(2)** Before production, complete a DPIA and document an Article 6 basis for every purpose, including the LIA if legitimate interests is relied on; publish a privacy notice explaining sources, model/vendor use, purposes, rights and retention. Do not enable Notion error logging with full submission content until its necessity, access and contractual safeguards are approved. **(3)** Minimize data sent to each service, set and test short execution/log retention and deletion, restrict access, create access/rectification/erasure/objection request procedures, and make the report clearly advisory with a correction route.
+
+**Residual risks:** Candidates may submit sensitive or third-party information despite warnings, and automated extraction or generated summaries can still omit context or produce misleading advice. Public GitHub material may be reused outside the contributor's expectations, while vendor terms, changing service regions and subprocessors create continuing transfer and retention uncertainty. If an employer later uses reports for screening, the impact and legal classification could change materially and require a fresh assessment.
+
+Input length limits and output validation do not, by themselves, establish data minimisation or prevent unsupported inferences.
+
+**What this memo is not:** This is a preliminary project-documentation assessment, not a legal opinion, a DPIA, or a certification. The client must engage qualified legal counsel and its DPO before relying on it for compliance decisions.
+
+### Accountability verification
+
+Based on the project files reviewed, a regulator could not be shown a complete compliance record using the current documentation alone.
+
+| Documentation | Status in this project |
+|---|---|
+| Data processing brief / data-flow description | [x] Exists in this file; service-level details and retention remain incomplete |
+| Records of processing activities (RoPA) | [ ] Not found |
+| Privacy notice for candidates | [ ] Not found |
+| DPA with n8n, OpenAI and any other processors | [ ] Not found |
+| International transfer mechanism / transfer assessment | [ ] Not found |
+| Lawful-basis record and any LIA | [ ] Not found |
+| DPIA or documented DPIA screening | [ ] Not found |
+| Retention and deletion schedule | [ ] Not found |
+| Data-subject request procedure | [ ] Not found |
+| Security/access-control and incident-response documentation | [ ] Not found |
 
 ## Sources
 
