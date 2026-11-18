@@ -34,8 +34,8 @@ Ironhack Project 3 · public repo `jaimegmarquerie-ui/proyecto3-agente-editorial
 - Founder's laptop: `evidence/` (21 files) and `samples/` (11 files), **with no retention rule** [V].
 - The same files are **public on GitHub** [V].
 - Tavily is a US company [V]; Google and Internet Archive are US-based [A]. Server regions and transfer mechanisms: **not documented** [NC].
-- Gemini **free tier** [V: README]. Google's terms let it use unpaid-service content to improve its products [V: terms, 23 Mar 2026].
+- Gemini **free tier** [V: README; confirmed by Jaime, 18 Nov 2026]. Google's terms let it use unpaid-service content to improve its products [V: terms, 23 Mar 2026].
 
 **Decisions and human review.** The agent automatically chooses searches, works, edition and "useful / not useful", and whether to retry [V]. These are decisions about **books, not people**. It orders and publishes nothing. The bookseller is meant to decide, but no approval step or record of that decision exists [V].
 
-**Unknown:** Tavily's role and retention period; applicable DPAs and transfer tools; current Gemini billing; clones or forks of the repo.
+**Unknown:** Tavily's role and retention period; applicable DPAs and transfer tools; clones or forks of the repo.

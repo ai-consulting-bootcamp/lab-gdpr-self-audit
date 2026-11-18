@@ -68,7 +68,7 @@ A separate `grep` counted how many files mention the third person named in a non
    - I could not open the full Gemini terms page: it is not on the sandbox's allowed list. I relied on search excerpts of `ai.google.dev/terms` (effective 23 Mar 2026) and archived versions.
    - The "EEA → Paid Services only" restriction appears in the 20 Nov 2025 archived version. It must be re-read in the current version.
    - I did not check Tavily's DPA, hosting region or DPF certification [NC].
-   - **Gemini status (17 Nov, 17:39):** Jaime reports that Gemini "still works" [D]. That confirms the key is active; it does **not** say whether the project is billed (Paid Services) or on the free tier. The README says free tier, so the finding stands until billing is checked in Google AI Studio.
+   - **Gemini status:** on 18 Nov 2026 Jaime confirmed that the project uses the **free tier** (no billing). The free-tier finding therefore stands as stated in the audit and memo.
 2. **No runtime check of data actually sent.** I read the code and the saved outputs, but did not intercept a live request. That would have required real API calls with the student's keys, which were not used.
 3. **Tests do not cover privacy.** The 49 tests mock every service, and none checks what personal data leaves the system.
 4. **Missing official source.** `01_gdpr-fundamentals.md` was not available and has not been read.
