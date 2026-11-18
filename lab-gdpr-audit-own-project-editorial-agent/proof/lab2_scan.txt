@@ -1,0 +1,9 @@
+evidence_files 20
+top_level_keys ['author', 'books', 'created_at_utc', 'describe_errors', 'dossier_path', 'error', 'google_books_errors', 'judge_attempts', 'judge_model', 'judgments', 'open_library_errors', 'profile_name', 'publisher_page_errors', 'query', 'research_status', 'results', 'search_attempts', 'search_history', 'tools_failed', 'tools_used']
+distinct_author_values 1 runs_with_author 10
+runs_where_query_contains_author_surname 10
+distinct_profile_names {'La Insumisa': 20}
+tavily_results_total 100 books_total 70
+social_profile_results {'linkedin.com': 2, 'x.com': 1}
+top_domains [('casadellibro.com', 19), ('todostuslibros.com', 17), ('elpais.com', 15), ('anagrama-ed.es', 15), ('hablemosescritoras.com', 8), ('indentagency.com', 7), ('es.wikipedia.org', 5), ('goodreads.com', 4)]
+email_like_strings 0
