@@ -166,6 +166,13 @@ Based on the project files reviewed, a regulator could not be shown a complete c
 | Retention and deletion schedule | [ ] Not found |
 | Data-subject request procedure | [ ] Not found |
 | Security/access-control and incident-response documentation | [ ] Not found |
+| Independent partner audit | [x] See [audit_report_GDPR_byAyhan.md](./audit_report_GDPR_byAyhan.md); partner findings support the blocking processor-contract and transfer gaps |
+
+### Partner-review disposition
+
+The partner audit agrees with the compliance gaps identified in this assessment and reaches a stricter launch gate: real candidate data must not be processed until processor contracts are established. This is consistent with the main **proceed with conditions** recommendation, with the conditions defining a pre-launch phase: DPA and deployment/transfer review are blocking, while lawful-basis transparency, minimisation, retention, DPIA screening and subject-rights procedures remain mandatory before public use.
+
+Synthetic-data demonstrations and use of the builder's own data may continue while those conditions are unresolved. No real third-party candidate data should be submitted before the blocking controls are in place.
 
 ## Sources
 
