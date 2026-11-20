@@ -8,6 +8,9 @@ This repository contains everything you need for this lab.
 
 - [`instructions.md`](./instructions.md) — the lab instructions
 - [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+- [`project-3-README.md`](./project-3-README.md) — the app project README used to prepare the interview-prep data processing brief
+- [`Data_Processing_Brief_Interview_Prep_Report.md`](./Data_Processing_Brief_Interview_Prep_Report.md) — the completed GDPR-style data processing brief for the Interview Prep Report project
+- [`audit_report_GDPR_byAyhan.md`](./audit_report_GDPR_byAyhan.md) — Ayhan Demir's independent partner review of the GDPR audit findings
 
 ## How to complete this lab
 
