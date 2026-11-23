@@ -1,23 +1,18 @@
-# Audit your own project — GDPR lens
+# GDPR self-audit: AI Use Case Identifier
 
-**Track:** Module 7 — GDPR · **When:** Week 7, Day 3 · **Status:** Required
+Friedrich Tschoepke · Ironhack AI Consulting & Integration · Lab "Audit your own project – GDPR lens"
 
-This repository contains everything you need for this lab.
+Audited system: my Project 3, [AI Use Case Identifier](https://github.com/Ztirf91/Project3---AI-Use-case-identifier), a research agent that prepares first meetings with small and mid-sized companies.
 
 ## Files
 
-- [`instructions.md`](./instructions.md) — the lab instructions
-- [`rubric.md`](./rubric.md) — how your submission is graded; this is what the AI reviewer checks your PR against
+| File | Contents |
+|---|---|
+| `01_data_processing_brief_ai_use_case_identifier.md` | Kick-off brief for a DPO: what personal data, sources, purposes, processors, storage locations, decisions about people |
+| `02_gdpr_audit_worksheet_ai_use_case_identifier.md` | CFU 1, Phase 1 data inventory with purpose-change flags, Phase 2 role map, Phase 3 lawful bases incl. legitimate interests assessment, Phase 4 risks and rights incl. DPIA screening, Phase 5 law stacking, CFU 4 accountability test |
+| `03_compliance_memo_ai_use_case_identifier.md` | Phase 6 memo to legal counsel: bottom line, three actions, residual risks, disclaimer |
+| `04_accountability_and_privacy_by_design.md` | Reinforce (documentation checklist, preparing a legal review) and stretch (privacy by design checklist) |
 
-## How to complete this lab
+## Result in one line
 
-1. **Fork** this repository.
-2. Do the work described in `instructions.md`, committing to your fork.
-3. Open a **pull request** back into this repository.
-4. You'll receive **AI feedback** on your PR based on `rubric.md`. Address any blocking feedback and push updates to the same PR.
-
-## Submission hygiene
-
-- Keep this repository scoped to this lab only — no unrelated projects or personal files.
-- Use clear, descriptive filenames.
-- Remove secrets, API keys, and tokens before committing.
+Proceed with conditions: personal data is incidental, but the system collects and keeps more of it than needed, without a retention limit or the required records.
